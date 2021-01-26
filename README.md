@@ -1,4 +1,4 @@
-# ADOM-projet
+# Travelling Salesman Problem
 
 Projet d'ADOM du M2 Miage (s3)
 Participants : *Aghiles Terbah, Malik Lela*
