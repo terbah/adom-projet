@@ -16,26 +16,30 @@ public class EvaluationTP2 {
 
 	private static String[] instances = { "A", "B", "C", "D", "E", "F" };
 	private static int[] bests = { 10659, 9234, 9529, 9108, 8899, 8989 };
-	private static String path = "/home/m2miage/terbah/Documents/ADOM/fichiers/";
+	//private static String path = "/home/m2miage/terbah/Documents/ADOM/fichiers/";
 	//private static String path = "/home/m2miage/lela/Documents/S3/ADOM/TPs/rapports/";
+	private static String path = "D:\\Malik\\ECOLE\\Lille1\\M2 (2019-2020)\\S3\\ADOM\\TPs\\Workspace_Projet_Adom\\adom-projet\\Ressources\\InstancesRandomTSP\\";
 
 	public static void main(String[] args) throws IOException {
 
 		// SWAP
 
+		
 		analyse_experimentale_meilleurVoisinAmeliorantSwap_Alea(50);
 		analyse_experimentale_meilleurVoisinAmeliorantSwap_HeurConst(50);
-
+		
 		analyse_experimentale_premierVoisinAmeliorantSwap_Alea(50);
 		analyse_experimentale_premierVoisinAmeliorantSwap_HeurConst(50);
 
 		// TWO-OPT
 
+		
 		analyse_experimentale_meilleurVoisinAmeliorantTwoOpt_Alea(50);
 		analyse_experimentale_meilleurVoisinAmeliorantTwoOpt_HeurConst(50);
 
 		analyse_experimentale_premierVoisinAmeliorantTwoOpt_Alea(50);
 		analyse_experimentale_premierVoisinAmeliorantTwoOpt_HeurConst(50);
+		
 
 	}
 
@@ -44,9 +48,11 @@ public class EvaluationTP2 {
 	// ---------------------------------------
 
 	public static void analyse_experimentale_meilleurVoisinAmeliorantSwap_Alea(int n) throws IOException {
+		
 		String filename = "meilleurVoisinAmeliorantSwap_Alea" + ".txt";
 		File f = new File(path + filename);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(f));
+		
 		int j = 0;
 		long startTime = System.nanoTime();
 		for (Matrice matrice : Glouton.readAllFiles()) {
@@ -103,9 +109,11 @@ public class EvaluationTP2 {
 	}
 
 	public static void analyse_experimentale_premierVoisinAmeliorantSwap_Alea(int n) throws IOException {
+		
 		String filename = "premierVoisinAmeliorantSwap_Alea" + ".txt";
 		File f = new File(path + filename);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(f));
+		
 		int j = 0;
 		long startTime = System.nanoTime();
 		for (Matrice matrice : Glouton.readAllFiles()) {
@@ -130,10 +138,11 @@ public class EvaluationTP2 {
 	}
 
 	public static void analyse_experimentale_premierVoisinAmeliorantSwap_HeurConst(int n) throws IOException {
-
+		
 		String filename = "premierVoisinAmeliorantSwap_HeurConst" + ".txt";
 		File f = new File(path + filename);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(f));
+		
 		int j = 0;
 		long startTime = System.nanoTime();
 		for (Matrice matrice : Glouton.readAllFiles()) {
@@ -164,6 +173,7 @@ public class EvaluationTP2 {
 	// ---------------------------------------
 
 	public static void analyse_experimentale_meilleurVoisinAmeliorantTwoOpt_Alea(int n) throws IOException {
+		
 		String filename = "meilleurVoisinAmeliorantTwoOpt_Alea.txt";
 		File f = new File(path + filename);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(f));

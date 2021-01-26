@@ -1,7 +1,14 @@
 package fil.adom.tp3;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
+
+import fil.adom.tp1.Glouton;
+import fil.adom.tp1.Matrice;
+import fil.adom.tp2.HillClimbing;
 
 public class OrderBasedCrossover {
 	
@@ -9,7 +16,7 @@ public class OrderBasedCrossover {
 	private Chemin parent2;
 	private boolean isVisited = false;
 	
-	private Chemin enfant;
+	private Chemin enfant = new Chemin();
 	
 	
 	
@@ -31,18 +38,26 @@ public class OrderBasedCrossover {
 		this.enfant = enfant;
 	}
 
+	public OrderBasedCrossover() {
+		// TODO Auto-generated constructor stub
+	}
 	public void load() {
 		int i = this.parent1.getChemin().length/2;
+		this.enfant.setChemin(new Integer[this.parent1.getChemin().length]);
         Random r = new Random();
+        List<Integer> cont = new ArrayList<>();
         int n = r.nextInt(i);
         for (int j=n; j<=n+i; j++) {
         	this.enfant.getChemin()[j] = this.parent1.getChemin()[j];
+        	cont.add(this.parent1.getChemin()[j]);
         }
-        for (int indice = 0; indice < n; indice++) {
-        	this.enfant.getChemin()[indice] = this.parent2.getChemin()[indice];
-        }
-        for (int indice2 = n+i; indice2<this.parent2.getChemin().length; indice2++) {
-        	this.enfant.getChemin()[indice2] = this.parent2.getChemin()[indice2];
+        for (Integer e : this.parent2.getChemin()) {
+        	for (int ind = 0; ind< enfant.getChemin().length; ind++) {
+        		if (enfant.getChemin()[ind] == null && !cont.contains(e)) {
+        			this.enfant.getChemin()[ind] = e;
+        			cont.add(e);
+        		}
+        	}
         }
         
 	}
@@ -70,6 +85,29 @@ public class OrderBasedCrossover {
 	public void setEnfant(Chemin enfant) {
 		this.enfant = enfant;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OrderBasedCrossover other = (OrderBasedCrossover) obj;
+		if (parent1 == null) {
+			if (other.parent1 != null)
+				return false;
+		} else if (!parent1.equals(other.parent1))
+			return false;
+		if (parent2 == null) {
+			if (other.parent2 != null)
+				return false;
+		} else if (!parent2.equals(other.parent2))
+			return false;
+		return true;
+	}
+	
 
 
 	

@@ -1,3 +1,4 @@
+
 data1 <- read.table("/home/m2miage/lela/Documents/S3/ADOM/TPs/rapports/ville1.txt")
 data2 <- read.table("/home/m2miage/lela/Documents/S3/ADOM/TPs/rapports/ville2.txt")
 data3 <- read.table("/home/m2miage/lela/Documents/S3/ADOM/TPs/rapports/ville3.txt")

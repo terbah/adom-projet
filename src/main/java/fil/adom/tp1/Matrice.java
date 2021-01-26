@@ -8,8 +8,9 @@ import java.io.IOException;
 
 public class Matrice {
 
-	public static String location = "/home/m2miage/terbah/Documents/ADOM/adom-projet/Ressources/InstancesRandomTSP/";
-	//public static String location = "C:\\Users\\aghil\\Documents\\M2MIAGE\\ADOM\\adom-projet\\Ressources\\InstancesRandomTSP\\";
+	//public static String location = "/home/m2miage/terbah/Documents/ADOM/adom-projet/Ressources/InstancesRandomTSP/";
+	public static String location = "C:\\Users\\aghil\\Documents\\M2MIAGE\\ADOM\\adom-projet\\Ressources\\InstancesRandomTSP\\";
+	//public static String location = "D:\\Malik\\ECOLE\\Lille1\\M2 (2019-2020)\\S3\\ADOM\\TPs\\Workspace_Projet_Adom\\adom-projet\\Ressources\\InstancesRandomTSP\\";
 	
 	private int[][] matrice;
 	private String instance;

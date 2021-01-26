@@ -83,6 +83,11 @@ public class EvaluationTP1 {
 	    writer.close();
 	}
 
+	/***
+	 * Fait varier le nombre de villes initiales et ecrit les résultats dans n fichiers.
+	 * @param n nombre de villes à tester 
+	 * @throws IOException
+	 */
 	public static void analyse_experimentale_villes(int n) throws IOException {
 		for (int i = 1; i < 6; i++) {
 			analyse_experimentale(i, n);

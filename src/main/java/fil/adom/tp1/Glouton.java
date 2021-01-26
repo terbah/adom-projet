@@ -34,14 +34,10 @@ import java.util.List;
  */
 public class Glouton {
 
-	// private static String location =
-	// "C:\\Users\\aghil\\Documents\\M2MIAGE\\ADOM\\adom-projet\\Ressources\\InstancesRandomTSP";
-	public static String location = "/home/m2miage/terbah/Documents/ADOM/sources";
-	//private static String location = "/home/m2miage/lela/Documents/S3/ADOM/TPs/Workspace_Projet_Adom/adom-projet/Ressources/InstancesRandomTSP";
-
 	private static String[] instances = {"A", "B", "C", "D", "E", "F"};
 	
 	public static void main(String[] args) throws IOException {
+		test();
 	}
 	
 	
@@ -49,7 +45,7 @@ public class Glouton {
 	 * Fonction servant de main
 	 * @throws IOException
 	 */
-	public void test() throws IOException {
+	public static void test() throws IOException {
 		Matrice matrice = new Matrice("A");
 		matrice.load();
 		Integer[] chemin = villesAleatoire(100);
@@ -79,7 +75,6 @@ public class Glouton {
 	 * @throws IOException
 	 */
 	public static List<Matrice> readAllFiles() throws IOException {
-		File folder = new File(location);
 		List<Matrice> list = new ArrayList<>();
 		for (String s : instances) {
 			list.add(new Matrice(s));

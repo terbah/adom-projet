@@ -7,6 +7,11 @@ public class Chemin implements Comparable{
 	private Integer[] chemin;
 	private int cout;
 	private boolean visited = false;
+	private int generation;
+	
+	public Chemin() {
+		
+	}
 	
 	public Chemin(Integer[] chemin) {
 		super();
@@ -37,13 +42,7 @@ public class Chemin implements Comparable{
 		this.visited = visited;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(chemin);
-		return result;
-	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -62,7 +61,16 @@ public class Chemin implements Comparable{
 	@Override
 	public int compareTo(Object obj) {
 		Chemin other = (Chemin) obj;
+		//return other.cout - this.getCout();
 		return this.getCout()- other.cout;
+	}
+
+	public int getGeneration() {
+		return generation;
+	}
+
+	public void setGeneration(int generation) {
+		this.generation = generation;
 	}
 	
 	

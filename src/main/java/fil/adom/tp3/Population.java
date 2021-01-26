@@ -36,18 +36,20 @@ public class Population {
 			Integer[] ch = Glouton.villesAleatoire(100);
 			Chemin chemin = new Chemin(ch);
 			chemin.setCout(Glouton.valChemin(ch, matrice));
+			chemin.setGeneration(0);
 			if (!chemins.contains(chemin))
 				chemins.add(chemin);
 		}
 	}
 
-	public void intiHeuristic(int n) {
+	public void initHeuristic(int n) {
 		for (int i = 0; i < n; i++) {
 			Integer[] ch = Glouton.villesAleatoire(100);
 			List<Integer> list = Glouton.cheminOptimal(ch[0], new ArrayList<>(Arrays.asList(ch)), matrice);
 			ch = list.toArray(new Integer[list.size()]);
 			Chemin chemin = new Chemin(ch);
 			chemin.setCout(Glouton.valChemin(ch, matrice));
+			chemin.setGeneration(0);
 			if (!chemins.contains(chemin))
 				chemins.add(chemin);
 		}
